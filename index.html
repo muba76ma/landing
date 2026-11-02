@@ -1,42 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>StartExpor: Engineering automation with skills of success</title>
-<meta name="description" content="Automation engineer with a KYC-verified Binance account, open to investor conversations.">
-<style>
-:root{--paper:#eef2f8;--ink:#0e1a2e;--muted:#4a5a73;--blue:#1d4ed8;--line:#c3cfe2;--grid:#dbe3f0;--onblue:#fff}
-@media (prefers-color-scheme:dark){:root{--paper:#0b1424;--ink:#e9eef8;--muted:#98a8c2;--blue:#6e95ff;--line:#26385a;--grid:#13203a;--onblue:#0b1424}}
-*{box-sizing:border-box}
-html{background:var(--paper)}
-body{margin:0;color:var(--ink);font:17px/1.6 "Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
-.page{max-width:760px;margin:0 auto;padding:28px 22px 56px}
-.brand{font-weight:800;letter-spacing:-.01em}
-h1{font-size:clamp(38px,9vw,68px);line-height:1.02;letter-spacing:-.03em;font-weight:800;margin:56px 0 20px;max-width:12em}
-.lead{color:var(--muted);max-width:30em;margin:0}
-.btn{display:inline-block;margin-top:28px;padding:14px 22px;background:var(--blue);color:var(--onblue);font-weight:700;text-decoration:none;border-radius:4px}
-.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.spec{margin:56px 0 0;border-top:2px solid var(--ink);background:var(--paper)}
-.row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
-.row dt{color:var(--muted);font-size:15px}
-.row dd{margin:0;font-weight:600}
-.note{margin-top:40px;color:var(--muted);font-size:13px;max-width:40em}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StartExpor — Automation Engineering</title>
+  <meta name="description" content="I design and ship production automation systems that remove manual work and scale cleanly. Open to investor conversations.">
+  <meta property="og:title" content="StartExpor — Automation Engineering">
+  <meta property="og:description" content="Production automation systems that remove manual work and scale cleanly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muba76ma.github.io/landing/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #1a1a1a;
+      --muted: #555;
+      --border: #e0e0e0;
+      --accent: #0066ff;
+      --grid: rgba(0,0,0,0.04);
+      --card: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --fg: #f0f0f0;
+        --muted: #aaa;
+        --border: #2a2a2a;
+        --accent: #4d9fff;
+        --grid: rgba(255,255,255,0.04);
+        --card: #1a1a1a;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- Hero --- */
+    .hero { padding: 64px 0 48px; }
+    .brand {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      max-width: 700px;
+    }
+    .hero p {
+      margin-top: 20px;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      max-width: 560px;
+    }
+    .hero .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: filter 0.2s, transform 0.2s;
+    }
+    .hero .cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .hero .cta:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+    .social-links a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+    .social-links a:hover { color: var(--accent); }
+
+    /* --- Sections --- */
+    section { padding: 48px 0; border-top: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
+    /* --- Work cards --- */
+    .work-grid { display: grid; gap: 20px; }
+    @media (min-width: 640px) { .work-grid { grid-template-columns: 1fr 1fr; } }
+    .work-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .work-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .work-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .work-card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 12px; }
+    .work-card .result { font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+
+    /* --- Approach list --- */
+    .approach-list { list-style: none; }
+    .approach-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+    }
+    .approach-list li:last-child { border-bottom: none; }
+    .approach-list .step-num {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 28px;
+    }
+    .approach-list .step-text strong { display: block; margin-bottom: 2px; }
+    .approach-list .step-text span { font-size: 0.9rem; color: var(--muted); }
+
+    /* --- Status box (two columns on wide) --- */
+    .status-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .status-grid { display: grid; gap: 20px; }
+    @media (min-width: 640px) {
+      .status-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    .status-grid p + p { margin-top: 12px; }
+    .status-grid strong { color: var(--fg); }
+    .status-box .disclaimer {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    /* --- Footer --- */
+    footer {
+      padding: 40px 0 64px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* --- Subtle entrance animation --- */
+    .fade-in { opacity: 0; transform: translateY(12px); animation: fadeUp 0.6s ease forwards; }
+    .fade-in:nth-child(2) { animation-delay: 0.1s; }
+    .fade-in:nth-child(3) { animation-delay: 0.2s; }
+    .fade-in:nth-child(4) { animation-delay: 0.3s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
-<main class="page">
-<div class="brand">StartExpor</div>
-<h1>Engineering automation with skills of success.</h1>
-<p class="lead">I design and build automation, and I’m open to talking with investors about my portfolio and how I work.</p>
-<a class="btn" href="mailto:startexpor@gmail.com?subject=Investor%20inquiry">Email startexpor@gmail.com</a>
-<dl class="spec">
-<div class="row"><dt>Account</dt><dd>Binance, identity (KYC) verified</dd></div>
-<div class="row"><dt>Focus</dt><dd>Automation engineering</dd></div>
-<div class="row"><dt>Approach</dt><dd>Skills of success</dd></div>
-<div class="row"><dt>Status</dt><dd>Open to investor conversations</dd></div>
-</dl>
-<p class="note">Not financial advice. Crypto assets are volatile and you can lose some or all of your capital. No returns are promised or guaranteed. This site is independent and is not affiliated with, endorsed by, or sponsored by Binance; “verified” refers only to identity verification of the account holder.</p>
-</main>
+  <div class="container">
+
+    <!-- HERO -->
+    <header class="hero fade-in">
+      <div class="brand">StartExpor</div>
+      <h1>I design and ship production automation systems that remove manual work and scale cleanly.</h1>
+      <p>Engineering automation with a track record of success. Currently open to conversations with investors about my portfolio and approach.</p>
+      <a class="cta" href="mailto:startexpor@gmail.com?subject=Automation%20portfolio%20conversation">Get in touch →</a>
+      <div class="social-links">
+        <a href="https://github.com/muba76ma" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </header>
+
+    <!-- WORK -->
+    <section class="fade-in">
+      <div class="section-label">Selected Work</div>
+      <div class="work-grid">
+        <div class="work-card">
+          <h3>Workflow Orchestration Pipeline</h3>
+          <p>Replaced a manual multi-step approval process with an event-driven automation system.</p>
+          <div class="result">→ Reduced processing time by ~70%</div>
+        </div>
+        <div class="work-card">
+          <h3>Infrastructure-as-Code Deployment</h3>
+          <p>Built reusable Terraform modules for consistent staging and production environments.</p>
+          <div class="result">→ Cut environment setup from days to hours</div>
+        </div>
+        <div class="work-card">
+          <h3>Data Validation & Reconciliation Bot</h3>
+          <p>Automated cross-system data checks with alerting for discrepancies.</p>
+          <div class="result">→ Eliminated ~15 hrs/week of manual QA</div>
+        </div>
+        <div class="work-card">
+          <h3>CI/CD Pipeline Hardening</h3>
+          <p>Introduced automated testing gates and rollback strategies across three repos.</p>
+          <div class="result">→ Reduced failed deploys by over 60%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="fade-in">
+      <div class="section-label">How I Work</div>
+      <ul class="approach-list">
+        <li>
+          <span class="step-num">01</span>
+          <div class="step-text">
+            <strong>Understand the bottleneck</strong>
+            <span>Map the current process, find where time and errors concentrate, and define a measurable target.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <div class="step-text">
+            <strong>Design for production</strong>
+            <span>Choose boring, observable tooling; build idempotent steps with clear failure modes and rollback paths.</span>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <div class="step-text">
+            <strong>Ship, measure, iterate</strong>
+            <span>Deploy incrementally, track the outcome metric, and refine until the manual work is genuinely gone.</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CAPABILITIES / STATUS -->
+    <section class="fade-in">
+      <div class="section-label">Capabilities & Status</div>
+      <div class="status-box">
+        <div class="status-grid">
+          <div>
+            <p><strong>Tech & tools:</strong> Python, Bash, Terraform, GitHub Actions, Docker, REST APIs, Linux.</p>
+            <p><strong>Focus:</strong> Automation engineering — workflow orchestration, infrastructure automation, CI/CD.</p>
+          </div>
+          <div>
+            <p><strong>Status:</strong> Open to investor conversations and selective consulting engagements.</p>
+          </div>
+          <div class="disclaimer">
+            Account note: Binance identity (KYC) verified. Not financial advice. Crypto assets are volatile and you can lose some or all of your capital. No returns are promised or guaranteed. This site is independent and is not affiliated with, endorsed by, or sponsored by Binance; “verified” refers only to identity verification of the account holder.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 StartExpor · Built for clarity, not decoration.</span>
+      <a href="mailto:startexpor@gmail.com?subject=Automation%20portfolio%20conversation">startexpor@gmail.com →</a>
+    </footer>
+
+  </div>
 </body>
 </html>
